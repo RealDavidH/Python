@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Crud</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+
+<body class="night ">
+    <div class="flex_row between ">
+        {% for user in users %}
+        <p class="text-40 mar-top-80 silver">Welcome {{ user.first_name }}!</p>
+        <p class="silver mar-top-80"><a href="/users" class="silver">Home</a></p>
+    </div>
+    <div class="container flex_column background_lightblue padding-20 mar-top-10 border">
+        <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+        <p class="mar-top-40">Email: {{ user.email }} </p>
+        <p class="mar-top-40">Created On: {{ user.created_at }} </p>
+        <p class="mar-top-40">Last Updated On: {{ user.updated_at }}</p>
+    </div>
+    <p class="silver mar-top-80 padding-10"><a href="/account/{{ user.id }}/edit" class="silver" >Edit</a> | <a href="/user/{{ user.id }}/delete" class="silver">Delete</a></p>
+    {% endfor %}
+</body>

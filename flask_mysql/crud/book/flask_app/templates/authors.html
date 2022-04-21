@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color1">
+    <div class="main_container border_round_5 background_color2">
+        <div class="container col-1 flex middle-top mar-top-10">
+            <form action="/create/author" method="post"
+                class="padding-20 color2 text_dec flex_column width-50 mar-top-40">
+                <p class="text-30 color4">New Author:</p>
+                <p class="mar-top-20 color4">Name:</p>
+                <input type="text" class="border_round_5 padding-5" name="name">
+                <input type="submit" class="mar-top-20 btn background_color4 color2" value="Create">
+            </form>
+        </div>
+        <div class="container col-1 flex mar-top-10">
+            <div class="padding-20 color2 text_dec flex_column width-100 mar-top-40 ">
+                <p class="text-30 color4">All Authors:</p>
+                <div class="background_color3 color1 padding-20 text_dec flex_column border-left width-50 mar-top-10 overflow_scroll height-400px">
+                    {% for author in authors %}
+                    <a href="/author/{{ author.id }}/favorite" class="color1">
+                        <p class="text-20">{{ author.name }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="flex middle"><a href="/books" class="mar-top-20 btn background_color4 color2">Add Books</a></div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+
+</html>

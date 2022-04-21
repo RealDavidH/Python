@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Crud</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+
+<body class="night ">
+    <div class="flex_row between ">
+        {% for user in users%}
+        <p class="text-40 mar-top-80 silver">Edit {{ user.first_name }}</p>
+        <p class="silver mar-top-80"><a href="/users" class="silver">Home</a></p>
+    </div>
+    <div class="container flex_column background_lightblue padding-20 mar-top-10 border">
+        <form action="/update/{{ user.id }}" method="post" class="flex_column middle">
+            <div class="container">
+                <p>First Name: </p>
+                <input type="text" name="first_name" id="first_name" value="{{ user.first_name }}">
+                <p>Last Name:</p>
+                <input type="text" name="last_name" value="{{ user.last_name }}" id="">
+                <p>Email</p>
+                <input type="text" name="email" value="{{ user.email }}" id="">
+                <input type="hidden" name="id" value="{{ user.id }}">
+            </div>
+    </div>
+    <div class="flex_row">
+        <input type="submit" class="btn" value="Update">
+        <a href="/show_user/{{ user.id }}" class="btn_buy no-txt-dec">Show User</a>
+    </div>
+        {% endfor %}
+    </form>
+</body>

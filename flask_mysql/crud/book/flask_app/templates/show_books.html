@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for book in books %}
+    <title>{{ book.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color1">
+    <div class="main_container border_round_5 background_color2">
+        <div class="flex bottom-left mar-bottom-10 mar-left-10"><a  href="/">Home</a></div>
+        <div class="container col-1 flex mar-top-10 middle-top">
+            <div class="padding-20 color2 text_dec flex_column width-100 mar-top-40 ">
+                <p class="text-20 color4">Authors that favorited "{{ book.title }}": </p>
+                <div class="background_color3 color1 padding-20 text_dec flex_column border-left width-50 mar-top-10 overflow_scroll height-400px">
+                    {% if favorites != False %}
+                    {% for favorite in favorites %}
+                    <p>{{ favorite.name }}</p>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="container col-1 flex middle-top mar-top-10">
+            <form action="/author/add/book/favorite" method="post"
+                class="padding-20 color2 text_dec flex_column width-50 mar-top-40">
+                <p class="text-30 color4">Make Author Favorite:</p>
+                {% for message in get_flashed_messages(category_filter=["err_favorite"]) %}
+                <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                {% endfor %}
+                <p class="mar-top-20 color4 text-20">Author:</p>
+                <select class="border_round_5 padding-10 text-20" name="author_id">
+                    {% for author in authors %}
+                    <option value="{{ author.id }}">{{ author.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="book_id" value="{{ book.id }}">
+                {% endfor %}
+                <input type="submit" class="mar-top-20 btn background_color4 color2" value="Add">
+            </form>
+        </div>
+    </div>
+</body>
+</body>
+
+</html>

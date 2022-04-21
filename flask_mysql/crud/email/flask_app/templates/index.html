@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+<body>
+    <div class="container background_lightblue flex middle ">
+        <form class="text-40 padding-40 flex_column" action="/email/process" method="post">
+            <p>Email:</p>
+            <input class="text-40" type="text" name="email" >
+            {% for message in get_flashed_messages(category_filter=["err_email"]) %}
+            {{message}}
+            {% endfor %}
+            <input type="submit" class="btn width-100" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

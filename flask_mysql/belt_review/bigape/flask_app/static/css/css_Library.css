@@ -1,0 +1,1061 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.flex-start{
+    align-items: flex;
+}
+ul {
+    list-style: none;
+}
+
+/* A elements for Nav */
+a.a_nav {
+    text-decoration: none;
+    color: white;
+}
+
+.body {
+    padding: 20px 20%;
+}
+
+
+.text_dec{
+    text-decoration: none;
+}
+
+h2 {
+    color: white;
+}
+
+.bar {
+    width: 100px;
+    height: 5px;
+    background-color: silver;
+    border-radius: 10px;
+}
+
+/* If you want a header with flex in it */
+header {
+    display: flex;
+    justify-content: center;
+}
+
+/* Nav background color and spacing */
+.nav {
+    background: rgb(58,56,69);
+    background: linear-gradient(180deg, rgba(58,56,69,1) 27%, rgba(247,204,172,1) 27%); 
+    color: whitesmoke;
+    min-height: 100px
+}
+
+/* Nav bar on the bottom of the page */
+.navbar_bottom {
+    background: rgb(247,204,172);
+    background: linear-gradient(180deg, rgba(247,204,172,1) 15%, rgba(139,118,108,1) 55%, rgba(58,56,69,1) 55%);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    min-height: 100px;
+    min-width: 100%;
+}
+
+/* Nav items, i.e. home buttons, profile buttons, about buttons, etc... */
+.nav_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+/* A list made to be flat instead of up and down */
+.nav_list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* right */
+.right {
+    display: flex;
+}
+
+/* left */
+.left {
+    flex-direction: column;
+}
+
+.flex_wrap {
+    flex-wrap: wrap;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex {
+    display: flex;
+}
+
+.map_marker {
+    height: 30px;
+    width: 20px;
+}
+
+.gear {
+    padding: 0 20%;
+}
+
+/* row might not actually do anything... */
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex_end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex_start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.alg_flex_start{
+    align-items: flex-start;
+}
+.alg-middle {
+    align-items: center;
+}
+
+.around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle {
+    justify-content: center;
+    align-items: center;
+}
+.middle-top {
+    justify-content: center;
+    align-items:flex-start;
+}
+.bottom-left{
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.bottom-right{
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.top-right{
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.top-left{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.overflow_scroll {
+    overflow: auto;
+}
+
+/* col-1 takes up 1 flex */
+.col-1,
+.col-2,
+.col-3 {
+    flex: 1;
+}
+
+/* Takes up 2 flex */
+.col-2 {
+    flex: 2;
+}
+
+/* Takes up 3 flex */
+.col-3 {
+    flex: 3;
+}
+
+/* The main part of the container with a top. Adjust height and width to change size, and change margin to to change where it is.*/
+/* with margin 0 auto it is currently centered in whatever container it is in */
+/* ^ I was wrong this just centers the stuff inside this container */
+.main_container {
+    display: flex;
+    min-height: 90vh;
+}
+.main_container2 {
+    display: flex;
+    min-height: 70vh;
+}
+
+.user_container {
+    border: solid silver;
+}
+
+.user_image {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+    border: silver solid;
+}
+
+.search_img {
+    width: 40px;
+    height: 40px;
+}
+
+.img_shoppingcart {
+    transform: scaleX(-1);
+    width: 40px;
+    height: 40px;
+}
+
+.img_flip {
+    transform: scaleX(-1);
+}
+
+.img_gamepic {
+    height: 150px;
+    width: 300px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* The top part of the container. Could possibly turn this into a nav bar. */
+/* Currently set to 20% of the height of the container with top */
+.container-top {
+    background: rgb(58,56,69);
+    background: linear-gradient(180deg, rgba(58,56,69,1) 58%, rgba(130,111,102,1) 70%, rgba(198,155,123,1) 93%);
+}
+
+.container {}
+
+.container-small {
+    border: solid silver;
+}
+
+.container-top-small {
+    background-color: #333333;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-top {
+    display: block;
+    background-color: lightblue;
+    height: 60px;
+    position: relative;
+}
+
+.container_game {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 1200px;
+}
+
+/* Where you put the contents. */
+/* Currently set to 90% of the container */
+/* Set to the center of the container with "margin: 0 auto" */
+.container-contents {
+    display: flex;
+    flex-direction: column;
+}
+
+/* COOKIE POP UP!!!!!!!!!!!!!! */
+/* THIS IS THE SCRIPT 
+function closeCookie() {
+            let checkbox = document.getElementById("cookie_check_Box")
+            let alert = document.getElementById("hidden_alert")
+            if (checkbox.checked == true) {
+                document.getElementById("cookie-popup").style.display = "none";
+            } else {
+                alert.style.display = "block";
+            }
+        } */
+
+/* The popup cookie - hidden by default */
+#cookie-popup {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    border: solid black;
+    width: 100%;
+}
+
+/* cookie container, where you add the script */
+.cookie-container {
+    padding: 10px;
+    background-color: white;
+}
+
+/* Set a style for the close button */
+.close_button {
+    color: white;
+    padding: 16px;
+    border: none;
+    width: 100%;
+    opacity: 0.8;
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+.close_button:hover {
+    background-color: rgb(199, 0, 0);
+    cursor: pointer;
+}
+
+/* Class to make elements hidden */
+.hidden {
+    display: none;
+}
+
+/* Sets the color of something to black */
+.black {
+    color: black;
+}
+
+/* The alert message box */
+#hidden_alert {
+    padding: 20px;
+    background-color: red;
+    color: white;
+    margin-bottom: 15px;
+    display: none;
+}
+
+/* How much the web page blurs while this cookie pop up is open */
+.blur {
+    filter: blur(8px);
+}
+
+/* END OF COOKIE POP UP!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.border_round_5 {
+    border-radius: 5px;
+}
+
+.border_round_10 {
+    border-radius: 10px;
+}
+
+.border_round_20 {
+    border-radius: 20px;
+}
+
+.border {
+    border: solid black 2px;
+}
+
+.border_temp {
+    border: dotted red;
+}
+
+
+.border-none {
+    border: none;
+}
+.border-top {
+    border-top: solid #3A3845;
+    border-bottom: solid #3A3845;
+}
+.border-left {
+    border-left: solid #3A3845;
+}
+.border-right {
+    border-right: solid #3A3845;
+}
+.border-bottom {
+    border-bottom: solid #3A3845;
+}
+.border-top {
+    border-top: solid #3A3845;
+}
+
+/* add text size to a class*/
+.text-10 {
+    font-size: 10px;
+}
+
+.text-15 {
+    font-size: 15px;
+}
+
+.text-20 {
+    font-size: 20px;
+}
+
+.text-25 {
+    font-size: 25px;
+}
+
+.text-30 {
+    font-size: 30px;
+}
+
+.text-40 {
+    font-size: 40px;
+}
+
+.text-60 {
+    font-size: 60px;
+}
+
+.text-80 {
+    font-size: 80px;
+}
+
+/* add underline to text */
+.underline {
+    text-decoration: underline;
+}
+
+.line_through {
+    text-decoration: line-through;
+}
+
+/* add margin top to a class */
+.mar-top-5 {
+    margin-top: 5px;
+}
+
+.mar-top-10 {
+    margin-top: 10px;
+}
+
+.mar-top-20 {
+    margin-top: 20px;
+}
+.mar-top-30 {
+    margin-top: 30px;
+}
+
+.mar-top-40 {
+    margin-top: 40px;
+}
+
+.mar-top-60 {
+    margin-top: 60px;
+}
+
+.mar-top-80 {
+    margin-top: 80px;
+}
+
+/* Add margin left to a class */
+.mar-left-5 {
+    margin-left: 5px;
+}
+
+.mar-left-10 {
+    margin-left: 10px;
+}
+
+.mar-left-20 {
+    margin-left: 20px;
+}
+
+.mar-left-40 {
+    margin-left: 40px;
+}
+
+/* Add margin right to a class */
+.mar-right-5 {
+    margin-right: 5px;
+}
+.mar-right-10 {
+    margin-right: 10px;
+}
+
+.mar-right-20 {
+    margin-right: 20px;
+}
+
+.mar-right-40 {
+    margin-right: 40px;
+}
+
+.mar-right-60 {
+    margin-right: 60px;
+}
+
+/* Add margin bottom to a class */
+.mar-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.mar-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.mar-bottom-25 {
+    margin-bottom: 25px;
+}
+
+.mar-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.mar-bottom-40 {
+    margin-bottom: 40px;
+}
+
+
+/* add margin to a class */
+.mar {
+    margin: 20px;
+}
+
+/* add width to a class */
+.width-30 {
+    width: 30%;
+}
+
+.width-50 {
+    min-width: 50%;
+    max-width: 50%;
+}
+.width-70 {
+    min-width: 70%;
+    max-width: 70%;
+}
+.fill{
+    min-width: 80%;
+    min-height: 100%;
+}
+
+.width-200{
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.width-400 {
+    min-width: 400px;
+    max-width: 400px;
+}
+
+/* add height to a class */
+.height-50 {
+    height: 50%;
+}
+
+.height-50px {
+    min-height: 50px;
+}
+
+.height-100px {
+    min-height: 100px;
+    max-height: 100px;
+}
+.height-200px {
+    min-height: 200px;
+    max-height: 200px;
+}
+
+.height-400px {
+    min-height: 400px;
+    max-height: 400px;
+}
+.max-height-500px{
+    max-height: 500px;
+}
+
+
+/* add gap to a class */
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+/* add padding to a class */
+.padding-5 {
+    padding: 5px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-30 {
+    padding: 30px;
+}
+
+.padding-40 {
+    padding: 40px;
+}
+
+/* add padding top to a class */
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.padding-top-40 {
+    padding-top: 40px;
+}
+
+
+/* add padding bottom to a class */
+.padding-bottom-40 {
+    padding-bottom: 40px;
+}
+
+/* add padding left to a class */
+.padding-left-40 {
+    padding-left: 40px;
+}
+
+/* add padding right to a class */
+.padding-right-20 {
+    padding-right: 20px;
+}
+
+.padding-right-40 {
+    padding-right: 40px;
+}
+
+.padding-right-80 {
+    padding-right: 80px;
+}
+
+/* Makes color of div */
+.white {
+    color: white;
+}
+
+.yellow2 {
+    color: #CC9F38;
+}
+
+.silver {
+    color: silver;
+}
+
+.grey {
+    color: grey;
+}
+
+.dojo_purple {
+    color: #8600e4;
+}
+
+.yellow {
+    color: #EDD998;
+}
+.color1{
+    color: #3A3845;
+}
+.color2{
+    color: #F7CCAC
+}
+.color3{
+    color: #C69B7B
+}
+.color4{
+    color: #826F66
+}
+.offwhite{
+    color: #DAF7A6
+
+}
+.background_color1{
+    background-color: #3A3845;
+}
+
+.background_color2{
+    background-color: #F7CCAC;
+}
+
+.background_color3{
+    background-color: #C69B7B;
+}
+
+.background_color4{
+    background-color: #826F66;
+}
+/* Using this to change color of div's on press of night mode button */
+.night {
+    background-color: #3A3845;
+}
+
+/* Changes background color */
+.background_white {
+    background-color: white;
+}
+
+.background_dojopurple {
+    background-color: #8600e4;
+}
+
+.background_green {
+    background-color: green;
+}
+
+.background_red {
+    background-color: red;
+}
+
+.background_blue {
+    background-color: blue;
+}
+
+.background_lightblue {
+    background-color: lightblue;
+}
+
+.background_yellow {
+    background-color: yellow;
+}
+
+.background_silver {
+    background-color: #545454;
+}
+
+.background_grey {
+    background-color: gray;
+}
+
+.background_black {
+    background-color: rgb(36, 36, 36);
+}
+
+.currency_dropdown {
+    color: black;
+    font-size: 20px;
+    border: solid black;
+    padding: 5px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!! */
+/* Bucha buttons */
+
+/* The first button which everything was based on */
+.btn {
+    font-size: 20px;
+    align-items: center;
+    padding: 2px 15px 2px 15px;
+}
+
+.eight {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+.btn_arrow {
+    background-color: white;
+    border: none;
+}
+
+.btn_icon {
+    background-color: white;
+    border: none;
+}
+
+.btn_arrow:hover {
+    background-color: rgb(163, 162, 162);
+    border: none;
+}
+
+.btn_accept {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: 5px solid black;
+}
+
+.btn_decline {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+.btn_round {
+    color: black;
+    background-color: silver;
+    border-radius: 50%;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+/* Green Button */
+.btn_buy {
+    background-color: #902B21;
+    font-size: 17px;
+    align-items: center;
+    padding: 5px 20px;
+    border: solid black 1px;
+}
+
+/* Yellow Button */
+.btn_Yellow {
+    background-color: #902B21;
+    display: flex;
+    align-items: center;
+    padding: 2px 15px 2px 15px;
+    box-shadow: 20px black;
+    text-shadow: 20px black;
+    border: solid 1px black;
+}
+
+/* What .btn does on hover */
+.btn:hover,
+.btn_Yellow:hover,
+.btn_buy:hover {
+    background-color: #a18672;
+}
+
+/* What yellow button does on hover */
+
+
+/* What green button does on hover */
+
+/* from boot strap */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+
+.table> :not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+.table>tbody {
+    vertical-align: inherit;
+}
+
+.table>thead {
+    vertical-align: bottom;
+}
+
+.table> :not(:first-child) {
+    border-top: 2px solid currentColor;
+}
+
+.table-sm> :not(caption)>*>* {
+    padding: 0.25rem 0.25rem;
+}
+
+.table-bordered> :not(caption)>* {
+    border-width: 1px 0;
+}
+
+.table-bordered> :not(caption)>*>* {
+    border-width: 0 1px;
+}
+
+.table-borderless> :not(caption)>*>* {
+    border-bottom-width: 0;
+}
+
+.table-borderless> :not(:first-child) {
+    border-top-width: 0;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
+}
+
+.table-active {
+    --bs-table-accent-bg: var(--bs-table-active-bg);
+    color: var(--bs-table-active-color);
+}
+
+.table-hover>tbody>tr:hover>* {
+    --bs-table-accent-bg: var(--bs-table-hover-bg);
+    color: var(--bs-table-hover-color);
+}
+
+.table-primary {
+    --bs-table-bg: #cfe2ff;
+    --bs-table-striped-bg: #c5d7f2;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #bacbe6;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #bfd1ec;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #bacbe6;
+}
+
+.table-secondary {
+    --bs-table-bg: #e2e3e5;
+    --bs-table-striped-bg: #d7d8da;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #cbccce;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #d1d2d4;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #cbccce;
+}
+
+.table-success {
+    --bs-table-bg: #d1e7dd;
+    --bs-table-striped-bg: #c7dbd2;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #bcd0c7;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #c1d6cc;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #bcd0c7;
+}
+
+.table-info {
+    --bs-table-bg: #cff4fc;
+    --bs-table-striped-bg: #c5e8ef;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #badce3;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #bfe2e9;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #badce3;
+}
+
+.table-warning {
+    --bs-table-bg: #fff3cd;
+    --bs-table-striped-bg: #f2e7c3;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #e6dbb9;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #ece1be;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #e6dbb9;
+}
+
+.table-danger {
+    --bs-table-bg: #f8d7da;
+    --bs-table-striped-bg: #eccccf;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #dfc2c4;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e5c7ca;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #dfc2c4;
+}
+
+.table-light {
+    --bs-table-bg: #f8f9fa;
+    --bs-table-striped-bg: #ecedee;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #dfe0e1;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e5e6e7;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #dfe0e1;
+}
+
+.table-dark {
+    --bs-table-bg: #212529;
+    --bs-table-striped-bg: #2c3034;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #373b3e;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #323539;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #373b3e;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 575.98px) {
+    .table-responsive-sm {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .table-responsive-md {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .table-responsive-lg {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .table-responsive-xl {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .table-responsive-xxl {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

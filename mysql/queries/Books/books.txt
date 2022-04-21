@@ -1,0 +1,46 @@
+msql> use books_schema
+
+mysql> insert into authors(name)
+    -> values ('Jane Austen'),
+    -> ('Emily Dickinson'),
+    -> ('Fyodor Dostoevsky'),
+    -> ('William Shakespeare'),
+    -> ('Lau Tzu');
+
+mysql> insert into books (title)
+    -> values ('C Sharp'),
+    -> ('Java'),
+    -> ('Python'),
+    -> ('PHP'),
+    -> ('Ruby');
+
+mysql> update `books` set `title` = 'C#' where (id=1);
+
+mysql> update `authors` set `name` = 'Bill' where (id=4);
+
+mysql> insert into favorites (author_id, book_id)
+    -> insert into favorites(1, 1),
+    -> insert into favorites(1, 2);'
+
+mysql> insert into favorites (author_id, book_id)
+    -> values (3,1),
+    -> (3,2),
+    -> (3,3),
+    -> (3,4);
+
+mysql> insert into favorites (author_id, book_id)
+    -> values (4,1),
+    -> (4,2),
+    -> (4,3),
+    -> (4,4);
+
+mysql> select * from favorites where book_id = 3;
+
+mysql> delete from favorites where id = 5;
+
+mysql> insert into favorites (author_id, book_id)
+    -> values (5,2);
+
+select * from favorites where author_id = 3;
+
+select * from favorites where book_id = 5;

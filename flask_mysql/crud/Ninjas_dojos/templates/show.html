@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninjas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+
+<body class="background_black flex">
+    <div class="main_container flex_column col-1 background_silver border mar-top-40">
+        <p class="text-30 mar-top-40 mar-bottom-40 yellow padding-20"> 
+            {% for dojo in dojos %}
+            {{ dojo.name }} Ninjas</p>
+            {% endfor %}
+        <div class="container yellow flex">
+            <table class="table table-light padding-20 width-400 height-100px ">
+                <tr>
+                    <th>First Name:</th>
+                    <th>Last Name:</th>
+                    <th>Age:</th>
+                </tr>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.first_name }}</td>
+                    <td>{{ student.last_name }}</td>
+                    <td>{{ student.age }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <a href="/" class="yellow2">
+            <p class="mar-top-20 padding-20">Home</p>
+        </a>
+    </div>
+    <div class="flex col-1"></div>
+</body>
+
+</html>

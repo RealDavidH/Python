@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ninja</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+
+<body class="background_black flex">
+    <div class="main_container flex_column col-1 background_silver border mar-top-40">
+            <p class="text-30 mar-top-40 mar-bottom-40 yellow padding-20">New Ninja</p>
+            <div class="container yellow flex ">
+                <form action="/create_ninja" method="post">
+                    <div class="flex">
+                        <div class="container text-20 col-1 padding-20 flex_column flex_start ">
+                            <p class="mar-bottom-25">Dojo:</p>
+                            <p class="mar-bottom-25">First Name:</p>
+                            <p class="mar-bottom-25">Last Name:</p>
+                            <p class="mar-bottom-25">Age:</p>
+                        </div>
+                        <div class="container col-1 padding-20 flex_column flex_end ">
+                            <select name="dojos_id" class="btn_Yellow mar-bottom-30 yellow" id="">
+                                {% for dojo in dojos %}
+                                <option value="{{ dojo.id }}" >{{ dojo.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="text" class="mar-bottom-30" name="first_name">
+                            <input type="text" class="mar-bottom-30" name="last_name">
+                            <input type="text" class="mar-bottom-30" name="age">
+                        </div>
+                    </div>
+                    <div class="container flex_end padding-20">
+                        <input type="submit" value="Create Ninja" class="btn_buy yellow">
+                    </div>
+                </form>
+            </div>
+        <a href="/" class="yellow2">
+            <p class="mar-top-20 padding-20">Home</p>
+        </a>
+    </div>
+    <div class="flex col-2"></div>
+</body>
+
+</html>

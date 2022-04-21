@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_Library.css') }}">
+</head>
+
+<body class="flex middle night">
+    <div class="container padding-20 row width-500 mar-top-80 border">
+        <form action="/process" method="post" class="flex_column height-100 width-100 padding-20">
+            
+            <div class="container row between">
+                <p class="text-20">Your name:</p><input name="name" id="name" class="text-20" type="text">
+                {% for message in get_flashed_messages(category_filter=["err_dojo_name"]) %}
+                {{message}}
+                {% endfor %}
+            </div>
+            <div class="container row between mar-top-40 mar-bottom-40">
+                <p class="text-20">Dojo Location:</p>
+                <select name="location" class="text-20" id="location">
+                    <option value="Bellevue, WA">Bellevue, WA</option>
+                    <option value="Boise, ID">Boise, ID</option>
+                    <option value="Los Angeles, CA">Los Angeles, CA</option>
+                    <option value="Silicon Valley, CA">Silicon Valley, CA</option>
+                    <option value="Chicago, IL">Chicago, IL</option>
+                </select>
+            </div>
+            <div class="container row between">
+                <p class="text-20">Favorite Language:</p>
+                <input type="radio" id="Python" name="language" checked="true" value="Python">
+                <label for="Python">Python</label>
+                <input type="radio" id="C#" name="language" value="C#">
+                <label for="C#">C#</label>
+                <input type="radio" id="Java" name="language" value="Java">
+                <label for="Java">Java</label>
+                <input type="radio" id="Javascript" name="language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+            </div>
+            <!-- <div class="container row between mar-top-40">
+                <p class="text-20">Favorite Language:</p>
+                <select name="language" class="text-20" id="language">
+                    <option value="Python"></option>
+                    <option value="">C#</option>
+                    <option value="Javascript">JavaScript</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div> -->
+            <div class="container mar-top-40">
+                <p>Comment (optional):</p>
+                <textarea id="comment" name="comment" rows="4" cols="60"></textarea>
+            </div>
+            <div class="flex_end mar-top-20">
+                <input type="checkbox" checked="true" id="check" name="check" class="mar-left-10">
+                <p class="mar-left-5">I would like to receive email offers</p>
+            </div>
+            <div class="flex_end mar-top-10">
+                <input type="submit" class="btn" value="submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

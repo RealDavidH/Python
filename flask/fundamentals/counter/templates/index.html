@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #333333; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <div>
+        <h1>Counter</h1>
+    </div>
+    <div>
+        <p>amount of times counter has been visited: {{ count }}</p>
+        <p>amount of times counter has been counted: {{ counter }}</p>
+        <a href="/add_2"><input type="button" value="Add 2"></a>
+        <a href="/destroy_session"><input type="button" value="end session"></a>
+        <a href="/reset"><input type="button" value="reset counter"></a>
+        <form action='/addnum' method='post'>
+        <input type="text" name="number">
+        <input type='submit' value='add to counter'>
+    </form>
+    </div>
+</body>
+</html>

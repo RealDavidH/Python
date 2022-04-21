@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css_Library.css') }}">
+</head>
+
+<body>
+    <div class="container flex_start padding-30 alg-middle">
+        <p>Your Gold:</p>
+        <div class="container padding-right-80 border mar-left-20">
+            <p>{{ session['gold'] }}</p>
+        </div>
+    </div>
+    <div class="main_container around">
+        <div class="container border flex_column middle padding-30 col-1">
+            <form action="/process_money" method='post' class="flex_column middle">
+                <input type="hidden" name="place" value="farm">
+                <p class="text-20"> <strong>Farm</strong></p>
+                <p class="mar-top-20 mar-bottom-20">(earns 10-20 golds)</p>
+                <input type="submit" value="Find Golds">
+            </form>
+        </div>
+        <div class="container border flex_column middle padding-30 col-1 mar-left-10">
+            <form action="/process_money" method='post' class="flex_column middle">
+                <input type="hidden" name="place" value="cave">
+                <p class="text-20"> <strong>Cave</strong></p>
+                <p class="mar-top-20 mar-bottom-20">(earns 5-10 golds)</p>
+                <input type="submit" value="Find Golds">
+            </form>
+        </div>
+        <div class="container border flex_column middle padding-30 col-1 mar-left-10">
+            <form action="/process_money" method='post' class="flex_column middle">
+                <input type="hidden" name="place" value="house">
+                <p class="text-20"> <strong>House</strong></p>
+                <p class="mar-top-20 mar-bottom-20">(earns 2-5 golds)</p>
+                <input type="submit" value="Find Golds">
+            </form>
+        </div>
+        <div class="container border flex_column middle padding-30 col-1 mar-left-10">
+            <form action="/process_money" method='post' class="flex_column middle">
+                <input type="hidden" name="place" value="casino">
+                <p class="text-20"> <strong>Casino</strong></p>
+                <p class="mar-top-20 mar-bottom-20">(earns/takes 0-50 golds)</p>
+                <input type="submit" value="Find Golds">
+            </form>
+        </div>
+    </div>
+    <div class="container mar-top-20">
+        <p>Activities:</p>
+        <div class="container border height-100px overflow_scroll">
+            {{ session['message']|safe }}
+        </div>
+    </div>
+    <form action="/reset">
+        <input type="submit" value="Reset" class="btn mar-top-40">
+    </form>
+</body>
+
+</html>

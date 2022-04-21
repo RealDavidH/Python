@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+<body class="night">
+    <div class="main_container">
+        <div class="col-1">
+            <div class="container">
+                <p class="text-30 mar-top-40 mar-bottom-40 silver ">New Dojo</p>
+                <form action="/create_dojo" class="flex" method="post">
+                        <div class="container mar-left-20 silver ">
+                            <label class="text-20"for="name">Name:</label>
+                        </div>
+                    <div class="container flex_column ">
+                        <input type="text" class="mar-left-20 text-20" name="name">
+                    </div>
+                    <input type="submit" class="btn mar-top-60 mar-right-20" value="Create">
+                </form>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="container">
+                <p class="text-30 mar-top-40 mar-bottom-40 silver ">All Dojos</p>
+                <div class="container border overflow_scroll height-400px width-400 background_white">
+                    <ul class="padding-5">
+                        {% for dojo in dojos %}
+                        <li class="padding-5"><a href="/dojos/{{ dojo.id }}" class="black">{{ dojo.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <a href="/ninjas" class="white"><p class="mar-top-20">Add Ninja</p></a>
+        </div>
+    </div>
+</body>
+</html>

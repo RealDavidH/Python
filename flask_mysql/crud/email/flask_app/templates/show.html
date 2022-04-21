@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_Library.css') }}">
+</head>
+
+<body class="flex middle">
+    <div class="main_container flex_column col-1 background_silver border mar-top-40">
+        <p class="text-30 mar-top-40 mar-bottom-40 yellow padding-20">
+        <div class="container yellow flex middle">
+            <table class="table table-light padding-20 middle">
+                <tr>
+                    <th>Created Emails</th>
+                </tr>
+                {% for email in emails %}
+                <tr>
+                    
+                    <td >{{ email.email }}</td>
+                    <td><a href="/delete/email/{{ email.id }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <a href="/" class="yellow2">
+            <p class="mar-top-20 padding-20">Home</p>
+        </a>
+    </div>
+
+</body>
+</html>

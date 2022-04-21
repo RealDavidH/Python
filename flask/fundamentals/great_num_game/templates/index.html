@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_Library.css') }}">
+</head>
+<body>
+    <div class="main_container flex_column middle ">
+        <h1>Welcome to the Great Number Game!!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <div class="container background_red {{ hidden1 }} yellow flex middle padding-40 border-none ">
+            <p class="text-40">Too low!</p>
+        </div>
+        <div class="container background_red {{ hidden2 }} yellow flex middle padding-40 border-none">
+            <p class="text-40">Too high!</p>
+        </div>
+        <div class="container {{ hidden3 }} background_green flex_column middle padding-40 border "> 
+            <p class="text-40">{{ num }} was my number!</p>
+            <p>you took {{ session['tries'] }} tries to get it!</p>
+            <a href="/reset"><input class="background_yellow border_round_20 padding-5 mar-top-20 border-none" type="button" value="Play again!"></a>
+        </div>
+        <div class="container {{ hidden4 }} background_red flex_column middle padding-40 border "> 
+            <p class="text-40">You lose!</p>
+            <p class="text-40">I was thinking of {{ num }}</p>
+            <a href="/reset"><input class="background_yellow border_round_20 padding-5 mar-top-20 border-none" type="button" value="Play again!"></a>
+        </div>
+        <div class="container {{ hide }}night yellow padding-20 mar-top-20 flex_column middle border-none">
+            <p class="{{ hide }}">Take a guess!!!</p>
+            <form action="/test" method="post" class="flex_column middle {{ hide }}">
+                <input class="padding-10 mar-top-10 border_round_10" type="text" name="text">
+                <input type="submit" class="background_yellow border_round_5 border-none padding-10 mar-top-10" value="Guess">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

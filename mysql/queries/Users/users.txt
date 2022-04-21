@@ -1,0 +1,23 @@
+mysql> use mydb
+mysql> insert into users(first_name, last_name, email)
+    -> values ('Gary', 'Gobbler', 'Garythegoob@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into users(first_name, last_name, email)
+    -> values ('Larry', 'Lobster', 'LARRYthelob@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into users(first_name, last_name, email)
+    -> values ('Sandy', 'Cheeks', 'texasgal101@gmail.com');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from users;
+
+mysql> select * from users where email like 'Garythegoob@gmail.com';
+
+mysql> select * from users where id=3;
+
+mysql> delete from users where id = 2;
+
+mysql> select users.first_name from users
+    -> order by first_name desc;

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make user!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color1">
+    <div class="main_container2 background_color2 flex_column border_round_5 padding-20">
+        <div class="flex middle-top col-1">
+            {% for user in users %}
+            <p class="text-30">Welcome {{ user.first_name }}!</p>
+            {% endfor %}
+        </div>
+        <div class="col-1 bottom-left flex padding-20">
+            <a href="/logout" class="btn background_color3 border black text_dec">Logout</a>
+        </div>
+    </div>
+</body>
+
+</html>

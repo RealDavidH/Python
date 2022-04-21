@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_Library.css') }}">
+</head>
+
+<body class="flex middle night">
+    <div class="container padding-20 row width-500 mar-top-80 border">
+        <form class="flex_column height-100 width-100 padding-20" action="/">
+            <div class="container row between">
+                <p class="text-20 underline">Your submitted info:</p>
+            </div>
+            <div class="container row between mar-top-20">
+                <p class="text-20">Name: {{ session['name'] }}</p>
+            </div>
+            <div class="container row between mar-top-10">
+                <p class="text-20">Dojo Location: {{ session['location'] }}</p> 
+            </div>
+            <div class="container row between mar-top-10">
+                <p class="text-20">Favorite Language: {{ session['langauge'] }}</p>
+            </div>
+            <div class="container row between mar-top-10">
+                <p class="text-20">Comment: {{ session['comment'] }}</p>
+            </div>
+            <div class="container row between mar-top-10">
+                <p class="text-20">Email Offers: {{ session['check'] }}</p>
+            </div>
+            <div class="flex_end mar-top-20">
+                <input type="submit" class="btn" value="Go Back">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

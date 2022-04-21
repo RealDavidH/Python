@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color1">
+    <div class="main_container border_round_5 background_color2">
+        <div class="flex bottom-left mar-bottom-10 mar-left-10"><a  href="/">Home</a></div>
+        <div class="container col-1 flex middle-top mar-top-10">
+            <form action="/book/create" method="post" class="padding-20 color2 text_dec flex_column width-50 mar-top-40">
+                <p class="text-30 color4">New Book:</p>
+                <p class="mar-top-20 color4">Title:</p>
+                <input type="text" class="border_round_5 padding-5" name="title">
+                <p class="mar-top-20 color4">Number of pages:</p>
+                <input type="text" class="border_round_5 padding-5" name="num_of_pages">
+                <input type="submit" class="mar-top-20 btn background_color4 color2" value="Create">
+            </form>
+        </div>
+        <div class="container col-1 flex mar-top-10">
+            <div class="padding-20 color2 text_dec flex_column width-100 mar-top-40 ">
+                <p class="text-30 color4">All Books:</p>
+                <div class="background_color3 color1 padding-20 text_dec flex_column border-left width-50 mar-top-10 overflow_scroll height-400px">
+                    {% for book in books %}
+                    <a href="/book/{{ book.id }}" class="color1">
+                        <p class="text-20">{{ book.title }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+
+</html>

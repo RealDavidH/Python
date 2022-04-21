@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sightings</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color2">
+    <div class="nav flex_column padding-20">
+        <div class="flex width-100 between mar-top-40">
+            <p class="text-30 mar-top-40 color1 ">Sasquatch Websighting</p>
+            {% for users in user %}
+            <p class="text-30 mar-top-40 color1">Welcome! {{ users.first_name }} {{ users.last_name }}</p>
+            {% endfor %}
+        </div>
+        <div class="mar-left-20 mar-top-10 width-100 flex_end">
+            <a href="/sighting/new" class="btn border black text_dec mar-right-10">Report Sighting</a>
+            <a href="/logout" class="btn border black text_dec">Logout</a>
+        </div>
+    </div>
+    <div class="main_container2">
+        <div class="container col-1 flex_column padding-10">
+            <p class="text-30 color1 flex ">Sightings:</p>
+            <div class="container border-right border-top border-bottom width-70 max-height-500px overflow_scroll padding-10">
+                {% if sightings != False %}
+                {% for sighting in sightings %}
+                {% for users in user %}
+                    
+                    <div class="container mar-top-10 background_color3 height-100px border text-20">
+                        <div class="container-top flex height-50px padding-10 color3 evenly">
+                            <p> Location: {{ sighting.location }}</p>
+                            <p>Date: {{ sighting.sighting_date }}</p>
+                        </div>
+                        <div class="between">
+                            <div class="container">
+                                {% if sighting.skeptic_tot > 0 %}
+                                <p># of skeptics: {{ sighting.skeptic_tot }}</p>
+                                {% else %}
+                                <p># of skeptics: 0</p>
+                                {% endif %}
+                            </div>
+                            <p class="padding-10 color1">Reported by: {{ sighting.first_name }} {{ sighting.last_name }}</p>
+                            {% if sighting.user_id == users.id %}
+                            <p class="padding-10"><a href="/delete/sighting/{{ sighting.id }}" class="color1">Delete
+                                    Sighting</a> | <a href="/edit/sighting/{{ sighting.id }}" class="color1">Edit
+                                    Sighting</a> | <a href="/view/sighting/{{ sighting.id }}" class="color1">View
+                                    Sighting</a> </p>
+                            {% else %}
+                            <p class="padding-10"><a href="/view/sighting/{{ sighting.id }}" class="color1">View Sighting</a></p>
+                            {% endif %}
+                        </div>
+                {% endfor %}
+                {% endfor %}
+                {% endif %}
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div class="navbar_bottom"></div>
+</body>
+
+</html>

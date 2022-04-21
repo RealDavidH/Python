@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color2">
+    <div class="nav flex bottom-right padding-10">
+            {% for users in user %}
+            <p class="text-30 mar-top-20 color1 ">Welcome {{ users.first_name }}!</p>
+            {% endfor %}
+            <a href="/logout" class="btn border black text_dec mar-left-20 mar-right-20 mar-top-20">Logout</a>
+    </div>
+    <div class="main_container2">
+        <div class="container col-1 flex_column">
+            <p class="text-30 color1 flex middle">Messages:</p>
+            {% for message in get_flashed_messages(category_filter=["message_deleted"]) %}
+                    <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                    {% endfor %}
+            <div class="container flex_column top-left padding-20 mar-top-10">
+                {% if messages != False %}
+                {% for message in messages %}
+                <div class="container mar-top-10 background_color3 height-200px width-70 border">
+                    <div class="container-top flex around flex-start height-50px">
+                        <p class="flex top-left padding-10 color3">From: {{ message.sender_name }}</p>
+                        <a href="/delete/message/{{ message.id }}" class="padding-10 color3">Delete Message</a>
+                    </div>
+                    <p class="mar-left-10">{{ message.message }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="container col-1 border-left flex">
+            <div class="col-1">
+                <form action="/send/message" method="post"
+                    class="padding-20 color1 text_dec flex_column mar-top-40">
+                    <p class="text-30 color1"><strong>Send a message:</strong></p>
+                    {% for message in get_flashed_messages(category_filter=["message_sent"]) %}
+                    <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                    {% endfor %}
+                    {% for message in get_flashed_messages(category_filter=["err_message_len"]) %}
+                    <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                    {% endfor %}
+                    {% for users in user %}
+                    <input type="hidden" name="sender" value="{{ users.id }}">
+                    <input type="hidden" name="sender_name" value="{{ users.first_name}} {{ users.last_name }}">
+                    {% endfor %}
+                    <p class="mar-top-20 color1 text-20">To who:</p>
+                    <select class="border_round_5 text-20" name="recipient">
+                        {% if friends != false %}
+                        {% for friend in friends %}
+                        <option value="{{ friend.friend_id }}">{{ friend.friend_first_name }} {{ friend.friend_last_name }}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                    <textarea class="mar-top-20" name="message" cols="30" rows="10"></textarea>
+                    <div class="flex middle">
+                        <input type="submit" class="mar-top-20 btn background_color2 black border" value="Send Message">
+                    </div>
+                </form>
+            </div>
+            <div class="col-1">
+                <form action="/add/friend" method="post"
+                    class="padding-20 color1 text_dec flex_column mar-top-40">
+                    <p class="text-30 color1"><strong>Add a friendship:</strong></p>
+                    {% for message in get_flashed_messages(category_filter=["err_friend"]) %}
+                    <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                    {% endfor %}
+                    {% for message in get_flashed_messages(category_filter=["add_friend"]) %}
+                    <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                    {% endfor %}
+                    {% for users in user %}
+                    <input type="hidden" name="user1" value="{{ users.id }}">
+                    {% endfor %}
+                    <p class="mar-top-20 color1 text-20">Add Friend:</p>
+                    <select class="border_round_5 text-20" name="user2">
+                        {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="flex middle">
+                        <input type="submit" class="mar-top-20 btn background_color2 black border" value="Add Friend">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="navbar_bottom"></div>
+</body>
+
+</html>

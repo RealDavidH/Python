@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css_Library.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="background_color1">
+    <div class="main_container border_round_5 background_color3">
+        <div class="container col-1 flex  mar-top-10 flex_column middle-top-50 padding-20">
+            <p class="text-30 color1"><strong>Friendships:</strong></p>
+            <div class="background_color2 padding-20 text_dec flex_column border-top border-bottom width-50 mar-top-10 overflow_scroll height-400px">
+                <table class="background_color4 border_round_5 text_center black padding-10">
+                    <tr class="border-left">
+                        <th class="border-right border-left border-bottom">User:</th>
+                        <th class="border-left border-right border-bottom">Friend:</th>
+                    </tr>
+                    {% for user in friends %}
+                    <tr>
+                        <td class="border-right border-left">{{user.first_name}} {{user.last_name}}</td>
+                        <td class="border-left border-right">{{user.friend_first_name}} {{user.friend_last_name}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="container col-1 flex_column middle-top ">
+            <form action="/create/user" method="post"
+                class="padding-20 color1 text_dec flex_column width-50 mar-top-40">
+                <p class="text-30 color1"><strong>New User:</strong></p>
+                <p class="mar-top-20 color1">First name:</p>
+                <input type="text" class="border_round_5 padding-5" name="first_name">
+                <p class="mar-top-20 color1">Last name:</p>
+                <input type="text" class="border_round_5 padding-5" name="last_name">
+                <input type="submit" class="mar-top-20 btn background_color4 color1" value="Create">
+            </form>
+            <form action="/add/friend" method="post"
+                class="padding-20 color1 text_dec flex_column width-50 mar-top-40">
+                <p class="text-30 color1"><strong>Add a friendship:</strong></p>
+                {% for message in get_flashed_messages(category_filter=["err_friend"]) %}
+                <p class="mar-top-10 background_white black flex middle">{{message}}</p>
+                {% endfor %}
+                <p class="mar-top-20 color1 text-20">User:</p>
+                <select class="border_round_5 text-20" name="user1">
+                    {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+                    {% endfor %}
+                </select>
+                <p class="mar-top-20 color1 text-20">Add Friend:</p>
+                <select class="border_round_5 text-20" name="user2">
+                    {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" class="mar-top-20 btn background_color4 color1" value="Add">
+                
+            </form>
+        </div>
+</body>
+
+</html>
+
+
+</html>
